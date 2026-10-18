@@ -10,6 +10,21 @@
   -moz-osx-font-smoothing: grayscale;
 
   font-optical-sizing: auto;
+
+  /* Consistent section-level typography tokens (Non-Hero) */
+  --section-eyebrow-size: 12px;
+  --section-eyebrow-weight: 500;
+  --section-eyebrow-spacing: 0.04em;
+  --section-eyebrow-line-height: 1.2;
+
+  --section-heading-size: 44px;
+  --section-heading-weight: 600;
+  --section-heading-spacing: -1.2px;
+  --section-heading-line-height: 1.1;
+
+  --section-description-size: 16px;
+  --section-description-weight: 400;
+  --section-description-line-height: 1.45;
 }
 
 * {

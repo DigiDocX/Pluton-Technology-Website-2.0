@@ -1,5 +1,5 @@
 .process-section {
-  padding: 160px 24px 80px;
+  padding: 240px 24px 80px;
   background: #fbfafd;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .process-eyebrow {
-  margin: 0 0 17px;
+  margin: 0 0 14px;
   color: #6b46a8;
   font-family: 'Instrument Sans', 'Rubik', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
+  font-size: var(--section-eyebrow-size, 12px);
+  font-weight: var(--section-eyebrow-weight, 500);
+  letter-spacing: var(--section-eyebrow-spacing, 0.04em);
+  line-height: var(--section-eyebrow-line-height, 1.2);
 }
 
 .process-header h2 {
@@ -42,10 +42,10 @@
   margin: 0;
   color: #17131d;
   font-family: 'Instrument Sans', 'Rubik', sans-serif;
-  font-size: clamp(58px, 3.25vw, 62px);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-size: var(--section-heading-size, 44px);
+  font-weight: var(--section-heading-weight, 600);
+  letter-spacing: var(--section-heading-spacing, -1.2px);
+  line-height: var(--section-heading-line-height, 1.1);
 }
 
 .process-heading-break {
@@ -424,7 +424,7 @@
   white-space: nowrap;
 }
 
-.parsing-artifact-field > span {
+.parsing-artifact-field>span {
   border: 1px solid #d9cbe9;
   border-radius: 3px;
   padding: 4px 6px;
@@ -479,14 +479,14 @@
   font-size: 15px;
 }
 
-.structured-card-header > strong {
+.structured-card-header>strong {
   position: relative;
   flex: 1;
   font-weight: 600;
 }
 
-.structured-field-card .structured-card-header > strong::after,
-.structured-json-card .structured-card-header > strong::after {
+.structured-field-card .structured-card-header>strong::after,
+.structured-json-card .structured-card-header>strong::after {
   position: absolute;
   right: 0;
   bottom: -7px;
@@ -963,7 +963,7 @@
     font-size: 9px;
   }
 
-  .parsing-artifact-field > span {
+  .parsing-artifact-field>span {
     padding: 3px 4px;
     font-size: 6px;
   }
@@ -1018,7 +1018,7 @@
   }
 
   .process-header h2 {
-    font-size: clamp(44px, 5.2vw, 56px);
+    font-size: clamp(34px, 5.2vw, 42px);
   }
 
   .process-heading-break {
@@ -1037,13 +1037,15 @@
 
   .process-eyebrow {
     margin-bottom: 12px;
-    font-size: 10px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
   }
 
   .process-header h2 {
     max-width: 480px;
-    font-size: clamp(36px, 10vw, 46px);
-    line-height: 1.07;
+    font-size: clamp(34px, 9vw, 42px);
+    letter-spacing: -0.045em;
+    line-height: 1.1;
   }
 
   .process-heading-break {
@@ -1319,7 +1321,7 @@
     font-size: 9px;
   }
 
-  .parsing-artifact-field > span {
+  .parsing-artifact-field>span {
     grid-column: 2;
     grid-row: 1 / span 2;
     align-self: center;
@@ -1389,6 +1391,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .process-section *,
   .process-section *::before,
   .process-section *::after {

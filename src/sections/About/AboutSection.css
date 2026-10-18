@@ -43,12 +43,12 @@
 
 .about-eyebrow {
   margin: 0 0 14px;
-  color: #17131d;
+  color: #6b46a8;
   font-family: 'Instrument Sans', 'Rubik', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
+  font-size: var(--section-eyebrow-size, 12px);
+  font-weight: var(--section-eyebrow-weight, 500);
+  letter-spacing: var(--section-eyebrow-spacing, 0.04em);
+  line-height: var(--section-eyebrow-line-height, 1.2);
 }
 
 .about-intro h2 {
@@ -56,10 +56,10 @@
   margin: 0;
   color: #17131d;
   font-family: 'Instrument Sans', 'Rubik', sans-serif;
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: -1.2px;
-  line-height: 1.1;
+  font-size: var(--section-heading-size, 44px);
+  font-weight: var(--section-heading-weight, 600);
+  letter-spacing: var(--section-heading-spacing, -1.2px);
+  line-height: var(--section-heading-line-height, 1.1);
 }
 
 .about-description {
@@ -67,9 +67,9 @@
   margin: 24px 0 0;
   color: #5d5666;
   font-family: 'Instrument Sans', 'Rubik', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.45;
+  font-size: var(--section-description-size, 16px);
+  font-weight: var(--section-description-weight, 400);
+  line-height: var(--section-description-line-height, 1.45);
 }
 
 .about-cta {
@@ -213,6 +213,11 @@
   line-height: 1;
 }
 
+.about-visual-metric.is-symbol {
+  font-size: 114px;
+  line-height: 0.85;
+}
+
 .about-visual-label {
   margin-top: 16px;
   color: #5d5666;
@@ -349,12 +354,45 @@
   }
 
   .about-visual-viewport {
-    height: 270px;
+    height: auto;
+  }
+
+  .about-visual-slot {
+    padding: 32px 14px;
   }
 
   .about-visual-metric {
     font-size: 72px;
   }
+
+  .about-visual-metric.is-symbol {
+    font-size: 90px;
+  }
+}
+
+.about-section:not(.is-scroll-driven) .about-frame {
+  height: auto;
+}
+
+.about-section:not(.is-scroll-driven) .about-visual-viewport {
+  height: auto;
+  overflow: visible;
+}
+
+.about-section:not(.is-scroll-driven) .about-visual-track {
+  position: static;
+  height: auto;
+  transform: none !important;
+}
+
+.about-section:not(.is-scroll-driven) .about-visual-slot {
+  flex: none;
+  width: 100%;
+  padding: 44px 20px;
+}
+
+.about-section:not(.is-scroll-driven) .about-visual-slot+.about-visual-slot {
+  border-top: 1px solid #d8d1df;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -364,5 +402,6 @@
 
   .about-visual-track {
     will-change: auto;
+    transform: none !important;
   }
 }

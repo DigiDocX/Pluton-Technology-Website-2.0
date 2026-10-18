@@ -4,7 +4,6 @@ import capabilityStages from './aboutData.js'
 import './AboutSection.css'
 
 const SECTION_SCROLL_VIEWPORTS = 2.8
-const VISUAL_STATES = [<InputFormatsVisual key="input-formats" />]
 
 function getCapabilityProgress(stage, sectionProgress) {
   if (sectionProgress <= stage.progressStart) return stage.initialProgress
@@ -56,19 +55,60 @@ function InputFormatsVisual() {
   )
 }
 
-function IntelligenceVisual({ sectionProgress }) {
-  const visualOffset = useTransform(sectionProgress, (progress) => `${progress * -25}%`)
+function DocumentSignalsVisual() {
+  return (
+    <div className="about-visual-state">
+      <strong className="about-visual-metric">3+</strong>
+      <span className="about-visual-label">[ DOCUMENT SIGNALS ]</span>
+      <p>OCR • language • document structure</p>
+    </div>
+  )
+}
+
+function DataPossibilitiesVisual() {
+  return (
+    <div className="about-visual-state">
+      <strong className="about-visual-metric is-symbol">∞</strong>
+      <span className="about-visual-label">[ DATA POSSIBILITIES ]</span>
+      <p>Fields • tables • entities • relationships</p>
+    </div>
+  )
+}
+
+function IntelligenceLayersVisual() {
+  return (
+    <div className="about-visual-state">
+      <strong className="about-visual-metric">4</strong>
+      <span className="about-visual-label">[ INTELLIGENCE LAYERS ]</span>
+      <p>Software • workflows • APIs • AI</p>
+    </div>
+  )
+}
+
+const VISUAL_STATES = [
+  { key: 'input-formats', Component: InputFormatsVisual },
+  { key: 'document-signals', Component: DocumentSignalsVisual },
+  { key: 'data-possibilities', Component: DataPossibilitiesVisual },
+  { key: 'intelligence-layers', Component: IntelligenceLayersVisual },
+]
+
+function AboutVisualTrack({ sectionProgress, scrollDriven }) {
+  const visualOffset = useTransform(
+    sectionProgress,
+    [0, 0.18, 0.28, 0.43, 0.53, 0.68, 0.78, 1],
+    ['0%', '0%', '-25%', '-25%', '-50%', '-50%', '-75%', '-75%'],
+  )
 
   return (
-    <aside className="about-visual-viewport" aria-label="Input formats visualization">
-      <motion.div className="about-visual-track" style={{ y: visualOffset }}>
-        {VISUAL_STATES.map((visual) => (
-          <div className="about-visual-slot" key={visual.key}>
-            {visual}
+    <aside className="about-visual-viewport" aria-label="Pluton capabilities visualization">
+      <motion.div
+        className="about-visual-track"
+        style={scrollDriven ? { y: visualOffset } : undefined}
+      >
+        {VISUAL_STATES.map(({ key, Component }) => (
+          <div className="about-visual-slot" key={key}>
+            <Component />
           </div>
-        ))}
-        {Array.from({ length: 3 }, (_, index) => (
-          <div className="about-visual-slot" aria-hidden="true" key={`reserved-state-${index + 2}`} />
         ))}
       </motion.div>
     </aside>
@@ -170,12 +210,23 @@ function AboutSection() {
                 />
               ))}
             </ol>
-            <IntelligenceVisual sectionProgress={sectionProgress} />
+            <AboutVisualTrack
+              sectionProgress={sectionProgress}
+              scrollDriven={scrollDriven}
+            />
           </div>
         </div>
       </div>
     </section>
   )
+}
+
+export {
+  InputFormatsVisual,
+  DocumentSignalsVisual,
+  DataPossibilitiesVisual,
+  IntelligenceLayersVisual,
+  AboutVisualTrack,
 }
 
 export default AboutSection

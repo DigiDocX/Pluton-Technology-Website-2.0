@@ -1,0 +1,431 @@
+.footer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fbfafd;
+    color: #17131d;
+}
+
+.footer-container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* ================================
+   MAIN
+   ================================ */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1.12fr;
+    column-gap: 105px;
+    padding: 59px 0 66px;
+}
+
+/* ================================
+   BRAND
+   ================================ */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #17131d;
+    text-decoration: none;
+}
+
+.footer-logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-logo-name {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.footer-tagline {
+    margin: 16px 0 0;
+    color: #17131d;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 32px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #17131d;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.footer-contact-icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8e8992;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+.footer-navigation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+}
+
+.footer-column h2 {
+    margin: 4px 0 25px;
+    color: #17131d;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column a {
+    color: #17131d;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+/* ================================
+   COPYRIGHT
+   ================================ */
+
+.footer-bottom {
+    height: 48px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-top: 1px solid #8c8790;
+}
+
+.footer-bottom p {
+    margin: 14px 0 0;
+    color: #69656d;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: right;
+}
+
+/* ================================
+   LARGE PLUTON WORDMARK
+   ================================ */
+
+.footer-wordmark {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 48px;
+    overflow: hidden;
+}
+
+.footer-wordmark span {
+    position: absolute;
+    left: 50%;
+    bottom: -123px;
+    transform: translateX(-50%);
+
+    color: transparent;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 300px;
+    font-weight: 500;
+    line-height: 0.78;
+    letter-spacing: -0.095em;
+    white-space: nowrap;
+
+    /*
+   * The Figma treatment is intentionally dashed.
+   */
+    -webkit-text-stroke: 1px #8773bf;
+
+    background-image: repeating-linear-gradient(to right,
+            #8773bf 0,
+            #8773bf 8px,
+            transparent 8px,
+            transparent 15px);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /*
+   * Keep the fill transparent while retaining
+   * the technical outline treatment.
+   */
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 1100px) {
+    .footer-container {
+        width: min(100% - 56px, 1100px);
+    }
+
+    .footer-main {
+        column-gap: 70px;
+    }
+
+    .footer-wordmark span {
+        font-size: 260px;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        row-gap: 55px;
+        padding: 55px 0 58px;
+    }
+
+    .footer-navigation {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+    }
+
+    .footer-bottom {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom p {
+        text-align: left;
+    }
+
+    .footer-wordmark {
+        height: 220px;
+        margin-top: 45px;
+    }
+
+    .footer-wordmark span {
+        font-size: 220px;
+        bottom: -80px;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-container {
+        width: calc(100% - 32px);
+    }
+
+    .footer-main {
+        padding: 48px 0 45px;
+    }
+
+    .footer-navigation {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+
+    .footer-column:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-column h2 {
+        margin-bottom: 18px;
+        font-size: 12px;
+    }
+
+    .footer-column ul {
+        gap: 14px;
+    }
+
+    .footer-column a {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        height: auto;
+        min-height: 58px;
+    }
+
+    .footer-bottom p {
+        max-width: 330px;
+        margin-top: 13px;
+        font-size: 10px;
+        line-height: 1.45;
+    }
+
+    .footer-wordmark {
+        height: 150px;
+        margin-top: 38px;
+    }
+
+    .footer-wordmark span {
+        font-size: 150px;
+        bottom: -45px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-contact-item,
+    .footer-column a {
+        transition: none;
+    }
+}
+
+/* =========================================
+   PLUTON WORDMARK
+   ========================================= */
+
+.footer-wordmark {
+    position: relative;
+    width: 100vw;
+    height: 205px;
+    margin-top: 12px;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+.footer-wordmark-svg {
+    position: absolute;
+    width: 116vw;
+    height: 455px;
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    display: block;
+    overflow: visible;
+}
+
+.footer-wordmark-text {
+    fill: none;
+    stroke: #8773bf;
+    stroke-width: 1.1;
+
+    /* Slightly more breathing room */
+    stroke-dasharray: 7 8;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 430px;
+    font-weight: 500;
+
+    /*
+   * Increase character spacing.
+   * Negative tracking was making PLUTON feel
+   * compressed together.
+   */
+    letter-spacing: -0.045em;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+    .footer-wordmark {
+        height: 165px;
+        margin-top: 20px;
+    }
+
+    .footer-wordmark-svg {
+        width: 120vw;
+        height: 390px;
+    }
+
+    .footer-wordmark-text {
+        font-size: 390px;
+        stroke-width: 1.05;
+        stroke-dasharray: 7.5 7.5;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+    .footer-wordmark {
+        height: 125px;
+        margin-top: 18px;
+    }
+
+    .footer-wordmark-svg {
+        width: 145vw;
+        height: 310px;
+    }
+
+    .footer-wordmark-text {
+        font-size: 310px;
+        stroke-width: 1;
+        stroke-dasharray: 7 7;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .footer-wordmark {
+        height: 100px;
+        margin-top: 16px;
+    }
+
+    .footer-wordmark-svg {
+        width: 165vw;
+        height: 260px;
+    }
+
+    .footer-wordmark-text {
+        font-size: 260px;
+        stroke-width: 0.9;
+        stroke-dasharray: 6 6;
+    }
+}
